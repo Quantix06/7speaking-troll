@@ -22,7 +22,7 @@ const createElement = (Element, attributes = {}, childrenArray = []) => {
   };
 function NewPage(id, password) {
 //  if (id == "bob.fraudster@ecole52.com" && password == "ILoveMoney69!") {
- if (id == "admin52" && password == "BestAdmin52") {
+ if (id == "admin52" && password == "Admin52!") {
 
     AveCesar();
   } else if (id == "shrek" && password == "shrek") {
