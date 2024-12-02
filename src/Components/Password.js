@@ -7,7 +7,6 @@ import image5 from "../Ressource/photo5.jpg";
 import image6 from "../Ressource/photo6.jpg";
 import image7 from "../Ressource/photo7.jpg";
 import image8 from "../Ressource/photo8.jpg";
-import image9 from "../Ressource/photo9.jpg";
 import "./Password.css";
 
 const Password = () => {
