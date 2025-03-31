@@ -1,0 +1,64 @@
+[
+  {
+    "original": "Je me suis donc rendu chez lui afin de lui parler de mes sentiments à son égard.",
+    "answers": [
+      {
+        "text": "I therefore went at his house to talk him about my feelings towards him.",
+        "isCorrect": false
+      },
+      {
+        "text": "I went to his place to talk to him about my feelings for him.",
+        "isCorrect": true
+      },
+      {
+        "text": "I was gone at his home in order to discuss my sensations about him.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "original": "Il a rejeté ma proposition pour fusionner 7Speaking et le Projet Voltaire.",
+    "answers": [
+      {
+        "text": "He rejected my proposal to merge 7Speaking and the Projet Voltaire.",
+        "isCorrect": true
+      },
+      {
+        "text": "He has refused my suggestion for combining the 7Speaking with the Voltaire Project.",
+        "isCorrect": false
+      },
+      {
+        "text": "He turned down my proposition about merging 7Speaking and Voltair Project.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "original": "Il a proposé de faire une collaboration avec Dualingo.",
+    "answers": [
+      {
+        "text": "He had proposed to do a collaboration with Dulingo.",
+        "isCorrect": false
+      },
+      { "text": "He proposed collaborating with Duolingo.", "isCorrect": true },
+      { "text": "He offered to partnership with Dualingo.", "isCorrect": false }
+    ]
+  },
+  {
+    "original": "Je l'ai donc assassiné de sang froid avec un dictionnaire anglais/français.",
+    "answers": [
+      {
+        "text": "I killed him coldly with a anglish/french book for dictionary.",
+        "isCorrect": false
+      },
+      {
+        "text": "I therefore murdered him with cold blood using an English-French dictionnary.",
+        "isCorrect": false
+      },
+      {
+        "text": "I cold-bloodedly killed him with an English/French dictionary.",
+        "isCorrect": true
+      }
+    ]
+  }
+]

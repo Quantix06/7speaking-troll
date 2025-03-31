@@ -7,6 +7,11 @@
   --mid-grey: #8e93a1;
   --dark-grey: #555a65;
   --dark-cyan: #083763;
+  --light-grey: #f4f4f4;
+}
+
+header {
+  @apply text-white p-4 flex items-center fixed gap-4 w-full bg-[var(--primary-red)] z-10;
 }
 
 body {
@@ -24,6 +29,10 @@ input[type="text"],
 input[type="email"],
 input[type="password"] {
   @apply w-full px-4 py-2 mt-2 border border-[var(--mid-grey)] placeholder-[var(--mid-grey)] text-[var(--dark-grey)] rounded-lg hover:border-black focus:outline-none;
+}
+
+h1 {
+  @apply text-2xl font-bold;
 }
 
 h2 {
@@ -93,4 +102,12 @@ nav .study {
 
 nav .test {
   background-color: #f43f5e;
+}
+
+.white-card {
+  @apply p-8 bg-white rounded-lg w-96;
+}
+
+.answer-btn {
+  @apply w-full transition-all ease-in-out p-2 rounded-lg cursor-pointer text-black/75 bg-[#f5f5f8] hover:bg-[#d5d5d5] border-2;
 }

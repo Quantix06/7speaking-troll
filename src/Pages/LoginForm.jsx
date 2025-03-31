@@ -26,7 +26,7 @@ export default function LoginForm() {
 
     if (identifiant === "shrek" && password === "shrek") {
       window.location.href = "https://user.7speaking.com/";
-    } else if (identifiant === "7admin" && password === "7speaking") {
+    } else if (identifiant === "7admin" && password === "7password") {
       navigate("/cesar");
     } else {
       alert("Identifiants incorrects. Veuillez réessayer.");
@@ -52,7 +52,7 @@ export default function LoginForm() {
       {modal && (
         <>
           <div className="modal-bg">
-            <div className="p-8 bg-white rounded-lg max-w-96">
+            <div className="white-card">
               <p className="text-center">
                 Vous êtes bien lent. Regardez dans le header du site !
               </p>
@@ -67,7 +67,7 @@ export default function LoginForm() {
         </>
       )}
       <div className="login-form-bg">
-        <div className="p-8 bg-white rounded-lg w-96">
+        <div className="white-card">
           <form
             className="flex flex-col items-center gap-4 w-full"
             onSubmit={handleSubmit}
