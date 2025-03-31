@@ -1,26 +1,31 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Logo from "../Ressource/7speaking_logo.png";
 import RickRollVideo from "../Ressource/RickRoll.mp4";
 
 export default function LoginForm() {
   const [isRickRoll, setIsRickRoll] = useState(false);
+  const [modal, setModal] = useState(false);
   const navigate = useNavigate();
+  const timer = useRef(null);
 
   useEffect(() => {
-    const videoElement = document.getElementById("rick-roll-video");
-    if (videoElement) {
-      videoElement.muted = false;
-    }
-  }, [isRickRoll]);
+    timer.current = setTimeout(() => {
+      setModal(true);
+    }, 200000);
+
+    return () => clearTimeout(timer.current);
+  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setModal(false);
+
     const identifiant = event.target.identifiant.value;
     const password = event.target.password.value;
 
     if (identifiant === "shrek" && password === "shrek") {
-      window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+      window.location.href = "https://user.7speaking.com/";
     } else if (identifiant === "7admin" && password === "7speaking") {
       navigate("/cesar");
     } else {
@@ -43,6 +48,23 @@ export default function LoginForm() {
             controls
           />
         </div>
+      )}
+      {modal && (
+        <>
+          <div className="modal-bg">
+            <div className="p-8 bg-white rounded-lg max-w-96">
+              <p className="text-center">
+                Vous êtes bien lent. Regardez dans le header du site !
+              </p>
+              <button
+                className="primary-btn mt-4"
+                onClick={() => setModal(false)}
+              >
+                D'accord
+              </button>
+            </div>
+          </div>
+        </>
       )}
       <div className="login-form-bg">
         <div className="p-8 bg-white rounded-lg w-96">
