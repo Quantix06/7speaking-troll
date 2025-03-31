@@ -1,6 +1,7 @@
 import React from "react";
 import Quiz from "../Data/quiz.json";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Resolve() {
   const [whichQuestion, setWhichQuestion] = useState(0);
@@ -47,7 +48,9 @@ export default function Resolve() {
         </>
       )}
       <header>
-        <img src="7speaking_logo.png" alt="logo" className="h-12" />
+        <Link to="/">
+          <img src="7speaking_logo.png" alt="logo" className="h-12" />
+        </Link>
         <h1>Traduisez les phrases suivantes</h1>
       </header>
       <div className="min-h-screen flex justify-center bg-[var(--light-grey)]">
@@ -64,7 +67,7 @@ export default function Resolve() {
                 key={index}
                 className={`answer-btn ${
                   selectedAnswer === answer.text
-                    ? " border-[var(--primary-red)]"
+                    ? " border-[var(--primary-yellow)]"
                     : "border-transparent"
                 }`}
                 onClick={() => setSelectedAnswer(answer.text)}

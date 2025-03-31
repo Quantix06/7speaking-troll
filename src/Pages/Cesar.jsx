@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Logo from "../Ressource/7speaking_logo.png";
 import email from "../Ressource/email.json";
 
-
-
 export default function Cesar() {
-    return (
-      <>
-        <div style={{ margin: 0, padding: 0, backgroundColor: "#F5F5F8" }}>
+  return (
+    <>
+      <div style={{ margin: 0, padding: 0, backgroundColor: "#F5F5F8" }}>
         <nav
           style={{
             display: "flex",
@@ -20,7 +16,10 @@ export default function Cesar() {
             fontFamily: "sans-serif",
           }}
         >
-          <div className="left" style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <div
+            className="left"
+            style={{ display: "flex", alignItems: "center", gap: "10px" }}
+          >
             <div
               className="badge"
               style={{
@@ -34,10 +33,21 @@ export default function Cesar() {
             >
               7
             </div>
-            <span style={{ fontWeight: 500, fontSize: "16px" }}>Code César</span>
+            <span style={{ fontWeight: 500, fontSize: "16px" }}>
+              Code César
+            </span>
           </div>
-  
-          <div className="center" style={{ display: "flex", alignItems: "center", gap: "15px", fontSize: "14px", color: "#444" }}>
+
+          <div
+            className="center"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "15px",
+              fontSize: "14px",
+              color: "#444",
+            }}
+          >
             <span
               className="yellow-tag"
               style={{
@@ -52,8 +62,11 @@ export default function Cesar() {
             </span>
             <span>Cesar · 20min · 19:56</span>
           </div>
-  
-          <div className="right" style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+
+          <div
+            className="right"
+            style={{ display: "flex", alignItems: "center", gap: "10px" }}
+          >
             <button
               className="study"
               style={{
@@ -82,23 +95,23 @@ export default function Cesar() {
             </button>
           </div>
         </nav>
-  
+
         <main style={{ display: "flex", width: "100%", padding: "20px" }}>
-        <div
+          <div
             className="column"
             style={{
-                width: "50%",
-                height: "100%",
-                boxSizing: "border-box",
-                borderRadius: "8px",
-                backgroundColor: "white",
-                borderTopLeftRadius: "8px",
-                borderBottomLeftRadius: "8px",
+              width: "50%",
+              height: "100%",
+              boxSizing: "border-box",
+              borderRadius: "8px",
+              backgroundColor: "white",
+              borderTopLeftRadius: "8px",
+              borderBottomLeftRadius: "8px",
             }}
-            >
+          >
             <div
-                className="cesarVideo"
-                style={{
+              className="cesarVideo"
+              style={{
                 position: "relative",
                 width: "100%",
                 paddingBottom: "56.25%", // 16:9 aspect ratio
@@ -106,30 +119,29 @@ export default function Cesar() {
                 overflow: "hidden",
                 borderTopLeftRadius: "8px",
                 borderBottomLeftRadius: "8px",
-                }}
+              }}
             >
-                <iframe
+              <iframe
                 src="https://www.youtube.com/embed/wlCRAwQ6vXc"
                 title="YouTube video player"
                 style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    border: 0,
-                    borderTopLeftRadius: "8px",
-                    borderBottomLeftRadius: "8px",
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  border: 0,
+                  borderTopLeftRadius: "8px",
+                  borderBottomLeftRadius: "8px",
                 }}
                 allowFullScreen
-                ></iframe>
+              ></iframe>
             </div>
 
             <p
-                style={{ padding: "20px" }}
-                dangerouslySetInnerHTML={{ __html: email.text }}
+              style={{ padding: "20px" }}
+              dangerouslySetInnerHTML={{ __html: email.text }}
             />
-
           </div>
           <div
             className="column"
@@ -144,7 +156,7 @@ export default function Cesar() {
             <p>Contenu de la colonne droite</p>
           </div>
         </main>
-        </div>
-      </>
-    );
-  }
+      </div>
+    </>
+  );
+}

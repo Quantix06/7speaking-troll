@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Logo from "../Ressource/7speaking_logo.png";
 import RickRollVideo from "../Ressource/RickRoll.mp4";
 
 export default function LoginForm() {
@@ -72,7 +71,7 @@ export default function LoginForm() {
             className="flex flex-col items-center gap-4 w-full"
             onSubmit={handleSubmit}
           >
-            <img className="w-24 h-24" src={Logo} alt="Logo" />
+            <img className="w-24 h-24" src="7speaking_logo.png" alt="Logo" />
             <h2>Bienvenue</h2>
             <input
               type="text"
