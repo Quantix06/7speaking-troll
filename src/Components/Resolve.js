@@ -7,8 +7,8 @@ const Resolve = () => {
       <header className="quiz-header">
         <div className="logo">
           <img src="https://lms.7speaking.com/nasimages/1800words/logo.png" alt="logo" className="logo-image" />
+          <h6 className="quiz-title">Les nombres</h6>
         </div>
-        <h6 className="quiz-title">Les nombres</h6>
       </header> 
       <div className="quiz-container">
         <div className="question-card">
