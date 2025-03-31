@@ -14,10 +14,10 @@
   justify-content: start;
   align-items: center;
   width: 100%;
-  padding: 27px;
+  padding: 25px;
   background-color: #ff3364;
   color: white;
-  gap: 10px;
+  gap: 10px; 
 }
 
 .logo-svg {
@@ -28,7 +28,7 @@
 .quiz-title {
   font-size: 24px;
   font-weight: bold;
-  margin: 0%;
+  margin: 0;
 }
 
 .quiz-container {
@@ -40,7 +40,7 @@
 
 .question-card {
   background: white;
-  padding: 118px;
+  padding: 60px;
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -52,7 +52,7 @@
 }
 
 .question-image {
-  width: 100px;
+  width: 200px ;
   height: auto;
   margin-bottom: 10px;
 }
@@ -66,7 +66,7 @@
   background-color: #DEDEE4;
   color: #333333;
   border: none;
-  padding: 10px;
+  padding: 30px;
   margin: 5px;
   border-radius: 5px;
   cursor: pointer;
