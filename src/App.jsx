@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginForm from "./Pages/LoginForm";
 import Password from "./Components/Password";
-
+import Resolve from "./Components/Resolve";
+import Cesar
+ from "./Components/Cesar";
 function App() {
   return (
     <BrowserRouter>
