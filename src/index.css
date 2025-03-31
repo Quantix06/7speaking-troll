@@ -1,5 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-body{
-  margin: 0%;
-  background-color: #251f21;
+:root {
+  --primary-red: #ff3364;
+  --mid-grey: #8e93a1;
+  --dark-grey: #555a65;
+  --dark-cyan: #083763;
+}
+
+body {
+  font-family: "sofia-pro", "Arial", sans-serif !important;
+  font-weight: 400;
+  @apply font-medium text-[var(--mid-grey)] text-sm;
+}
+
+.login-form-bg {
+  background-image: url("./Ressource/image-login-7Speaking.f8bd740d.jpg");
+  @apply bg-cover bg-no-repeat bg-center min-h-screen flex items-center justify-center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  @apply w-full px-4 py-2 mt-2 border border-[var(--mid-grey)] placeholder-[var(--mid-grey)] text-[var(--dark-grey)] rounded-lg hover:border-black focus:outline-none;
+}
+
+h2 {
+  @apply text-xl font-[500] text-center text-gray-600 mb-6;
+}
+
+.primary-btn {
+  @apply w-full bg-[var(--primary-red)] text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300;
 }
