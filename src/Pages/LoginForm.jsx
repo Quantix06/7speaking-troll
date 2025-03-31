@@ -5,20 +5,21 @@ import RickRollVideo from "../Ressource/RickRoll.mp4";
 
 export default function LoginForm() {
   const [isRickRoll, setIsRickRoll] = useState(false);
+  const [modal, setModal] = useState(false);
   const navigate = useNavigate();
   const timer = useRef(null);
 
   useEffect(() => {
     timer.current = setTimeout(() => {
-      alert("Vous êtes bien lent, regardez dans le header du site :)");
-    }, 300000);
+      setModal(true);
+    }, 200000);
 
     return () => clearTimeout(timer.current);
   }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    clearTimeout(timer.current);
+    setModal(false);
 
     const identifiant = event.target.identifiant.value;
     const password = event.target.password.value;
@@ -47,6 +48,23 @@ export default function LoginForm() {
             controls
           />
         </div>
+      )}
+      {modal && (
+        <>
+          <div className="modal-bg">
+            <div className="p-8 bg-white rounded-lg max-w-96">
+              <p className="text-center">
+                Vous êtes bien lent. Regardez dans le header du site !
+              </p>
+              <button
+                className="primary-btn mt-4"
+                onClick={() => setModal(false)}
+              >
+                D'accord
+              </button>
+            </div>
+          </div>
+        </>
       )}
       <div className="login-form-bg">
         <div className="p-8 bg-white rounded-lg w-96">
