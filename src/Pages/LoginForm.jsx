@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Logo from "../Ressource/7speaking_logo.png";
 import RickRollVideo from "../Ressource/RickRoll.mp4";
@@ -6,21 +6,25 @@ import RickRollVideo from "../Ressource/RickRoll.mp4";
 export default function LoginForm() {
   const [isRickRoll, setIsRickRoll] = useState(false);
   const navigate = useNavigate();
+  const timer = useRef(null);
 
   useEffect(() => {
-    const videoElement = document.getElementById("rick-roll-video");
-    if (videoElement) {
-      videoElement.muted = false;
-    }
-  }, [isRickRoll]);
+    timer.current = setTimeout(() => {
+      alert("Vous êtes bien lent, regardez dans le header du site :)");
+    }, 300000);
+
+    return () => clearTimeout(timer.current);
+  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    clearTimeout(timer.current);
+
     const identifiant = event.target.identifiant.value;
     const password = event.target.password.value;
 
     if (identifiant === "shrek" && password === "shrek") {
-      window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+      window.location.href = "https://user.7speaking.com/";
     } else if (identifiant === "7admin" && password === "7speaking") {
       navigate("/cesar");
     } else {
