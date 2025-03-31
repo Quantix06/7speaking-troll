@@ -31,5 +31,9 @@ h2 {
 }
 
 .primary-btn {
-  @apply w-full bg-[var(--primary-red)] text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300;
+  @apply w-full bg-[var(--primary-red)] text-white py-2 rounded-lg hover:opacity-75 transition duration-300;
+}
+
+.modal-bg {
+  @apply bg-black/50 w-screen h-screen fixed top-0 left-0 z-50 flex items-center justify-center;
 }
