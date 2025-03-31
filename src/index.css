@@ -33,3 +33,60 @@ h2 {
 .primary-btn {
   @apply w-full bg-[var(--primary-red)] text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300;
 }
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid #eee;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+nav .left,
+nav .center,
+nav .right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+nav .center {
+  gap: 15px;
+  font-size: 14px;
+  color: #444;
+}
+
+nav .badge {
+  background-color: #f43f5e;
+  color: white;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+nav .yellow-tag {
+  background-color: #facc15;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+nav button {
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+nav .study {
+  background-color: #facc15;
+}
+
+nav .test {
+  background-color: #f43f5e;
+}
