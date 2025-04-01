@@ -3,7 +3,7 @@ import Caroussel1 from '../Ressource/Caroussel1.png';
 import Caroussel2 from '../Ressource/Caroussel2.png';
 import Caroussel3 from '../Ressource/Caroussel3.png';
 import Caroussel4 from '../Ressource/Caroussel4.png';
-import { height } from "@mui/system";
+import { height, positions } from "@mui/system";
 
 const steps = [
   {
@@ -44,21 +44,28 @@ export default function Carousel() {
     return (
       <div style={styles.container}>
         <div style={styles.card}>
-          <h2>{currentStep.title}</h2>
+          <h2 style={{marginBottom: 0,}} >{currentStep.title}</h2>
   
           {/* Zone image + flèches */}
           <div style={styles.imageWrapper}>
-            <button onClick={goPrev} style={styles.arrowLeft}>←</button>
-            <img src={currentStep.image} alt={currentStep.title} style={styles.image} />
-            <button onClick={goNext} style={styles.arrowRight}>→</button>
-          </div>
-  
+                {index !== 0 && (
+                    <button onClick={goPrev} style={styles.arrowLeft}>←</button>
+                )}
+
+                <img src={currentStep.image} alt={currentStep.title} style={styles.image} />
+
+                {index !== steps.length - 1 && (
+                    <button onClick={goNext} style={styles.arrowRight}>→</button>
+                )}
+            </div>
+
           <p style={{ width: "70%", textAlign: "left" }}>{currentStep.content}</p>
         </div>
   
-        <div style={styles.nav}>
-          <span>{index + 1} / {steps.length}</span>
+        <div style={{ ...styles.nav, position: "fixed", bottom:"10%" }}>
+            <span>{index + 1} / {steps.length}</span>
         </div>
+
       </div>
     );
   }

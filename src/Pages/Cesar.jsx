@@ -28,6 +28,7 @@ export default function Cesar() {
             borderBottom: "1px solid #eee",
             backgroundColor: "white",
             fontFamily: "sans-serif",
+            margin: "0",
           }}
         >
           <div className="left" style={{ display: "flex", alignItems: "center", gap: "10px" }}>
