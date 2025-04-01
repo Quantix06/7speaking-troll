@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Logo from "../Ressource/7speaking_logo.png";
 import email from "../Ressource/email.json";
 import Carousel from "../Components/Caroussel.jsx";
 
