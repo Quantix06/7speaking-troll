@@ -116,10 +116,13 @@ export default function Cesar() {
           </div>
         </div>
       )}
+
       <video
         ref={videoRef}
         className={`object-cover absolute h-56 w-32 bottom-8 right-8 rounded-lg transition-all duration-1000 ease-in-out ${
-          isJohnPork ? "translate-x-0" : "translate-x-[200%]"
+          isJohnPork
+            ? "translate-x-0"
+            : "translate-x-[200%] pointer-events-none"
         }`}
         src={JohnPork}
         type="video/mp4"
@@ -127,6 +130,7 @@ export default function Cesar() {
         loop
         muted
       />
+
       <div>
         <nav className="bg-white shadow-md shadow-gray-300/50 flex px-8 py-2 justify-between">
           <div className="flex gap-2 items-center">
