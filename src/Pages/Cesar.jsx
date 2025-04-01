@@ -3,112 +3,115 @@ import { useNavigate } from "react-router-dom";
 import email from "../Ressource/email.json";
 import Carousel from "../Components/Caroussel.jsx";
 
-
-
 export default function Cesar() {
+  const [modal, setModal] = useState(false);
+  const [errorModal, setErrorModal] = useState(false);
+  const [answer, setAnswer] = useState("");
+  const navigate = useNavigate();
 
-    useEffect(() => {
-        document.body.style.overflow = "hidden";
-        return () => {
-          document.body.style.overflow = "auto"; // reset au démontage
-        };
-      }, [])
+  const handleValidation = () => {
+    if (answer.trim().toLowerCase() === "7Speaking Admin".toLowerCase()) {
+      navigate("/resolve");
+    } else {
+      setModal(false);
+      setErrorModal(true);
+      setAnswer("");
+    }
+  };
 
+  const handleClose = () => {
+    setModal(false);
+    setAnswer("");
+  };
 
-    return (
-      <>
-        <div style={{ margin: 0, padding: 0, backgroundColor: "#F5F5F8", overflow: "hidden" }}>
-        <nav
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            padding: "10px 20px",
-            borderBottom: "1px solid #eee",
-            backgroundColor: "white",
-            fontFamily: "sans-serif",
-            margin: "0",
-          }}
-        >
-          <div className="left" style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <div
-              className="badge"
-              style={{
-                backgroundColor: "#f43f5e",
-                color: "white",
-                fontWeight: "bold",
-                padding: "6px 10px",
-                borderRadius: "5px",
-                fontSize: "16px",
-              }}
-            >
-              7
-            </div>
-            <span style={{ fontWeight: 500, fontSize: "16px" }}>Code César</span>
+  return (
+    <>
+      {modal && (
+        <div className="modal-bg">
+          <div className="white-card flex flex-col gap-4">
+            <p className="text-center">Qui est l'auteur de ce texte ?</p>
+            <form className="flex flex-col items-center gap-4 w-full">
+              <input
+                type="text"
+                placeholder="Réponse"
+                value={answer}
+                onChange={(e) => setAnswer(e.target.value)}
+              />
+              <div className="flex gap-4 w-full">
+                <button
+                  className="secondary-btn"
+                  onClick={handleClose}
+                  type="button"
+                >
+                  Annuler
+                </button>
+                <button
+                  className="primary-btn"
+                  onClick={handleValidation}
+                  type="submit"
+                >
+                  Valider
+                </button>
+              </div>
+            </form>
           </div>
-  
-          <div className="center" style={{ display: "flex", alignItems: "center", gap: "15px", fontSize: "14px", color: "#444" }}>
-            <span
-              className="yellow-tag"
-              style={{
-                backgroundColor: "#facc15",
-                color: "white",
-                padding: "2px 6px",
-                borderRadius: "4px",
-                fontSize: "12px",
-              }}
-            >
-              3
-            </span>
-            <span>Cesar · 20min · 19:56</span>
-          </div>
-  
-          <div className="right" style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+        </div>
+      )}
+      {errorModal && (
+        <div className="modal-bg">
+          <div className="white-card flex flex-col gap-4">
+            <p className="text-center">Mauvaise réponse !</p>
             <button
-              className="study"
-              style={{
-                backgroundColor: "#facc15",
-                color: "white",
-                border: "none",
-                padding: "6px 12px",
-                borderRadius: "5px",
-                cursor: "pointer",
-              }}
+              className="primary-btn"
+              onClick={() => setErrorModal(false)}
             >
-              Processus d'étude
+              D'accord
             </button>
-            <button
-              className="test"
-              style={{
-                backgroundColor: "#f43f5e",
-                color: "white",
-                border: "none",
-                padding: "6px 12px",
-                borderRadius: "5px",
-                cursor: "pointer",
-              }}
-            >
-              Test d'incompréhension
+          </div>
+        </div>
+      )}
+      <div>
+        <nav className="bg-white shadow-md shadow-gray-300/50 flex p-2 justify-between">
+          <div className="flex gap-2 items-center">
+            <div className="red-tag">7</div>
+            <p>Code César</p>
+          </div>
+
+          <div className="flex gap-2 items-center">
+            <div className="yellow-tag">3</div>
+            <p>Cesar · 20min · 19:56</p>
+          </div>
+
+          <div className="flex gap-2 items-center">
+            <button className="secondary-btn">Processus d'étude</button>
+            <button className="primary-btn" onClick={() => setModal(true)}>
+              Réponse
             </button>
           </div>
         </nav>
-  
-        <main style={{ display: "flex", width: "100%", padding: "20px", gap: "20px" }}>
-        <div
+
+        <main
+          style={{
+            display: "flex",
+            width: "100%",
+            padding: "20px",
+            gap: "20px",
+          }}
+        >
+          <div
             className="column"
             style={{
-                width: "50%",
-                overflowY: "auto",
-                maxHeight: "calc(100vh - 110px)",
-                boxSizing: "border-box",
-                borderRadius: "8px",
-                backgroundColor: "white",
-                
+              width: "50%",
+              overflowY: "auto",
+              maxHeight: "calc(100vh - 110px)",
+              boxSizing: "border-box",
+              borderRadius: "8px",
+              backgroundColor: "white",
             }}
-            >
+          >
             <div
-                className="cesarVideo"
-                style={{
+              className="cesarVideo"
+              style={{
                 position: "relative",
                 width: "100%",
                 paddingBottom: "56.25%", // 16:9 aspect ratio
@@ -116,28 +119,27 @@ export default function Cesar() {
                 overflow: "hidden",
                 borderTopLeftRadius: "8px",
                 borderTopRightRadius: "8px",
-                }}
+              }}
             >
-                <iframe
+              <iframe
                 src="https://www.youtube.com/embed/wlCRAwQ6vXc"
                 title="YouTube video player"
                 style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    border: 0,
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  border: 0,
                 }}
                 allowFullScreen
-                ></iframe>
+              ></iframe>
             </div>
 
             <p
-                style={{ padding: "20px" }}
-                dangerouslySetInnerHTML={{ __html: email.text }}
+              style={{ padding: "20px" }}
+              dangerouslySetInnerHTML={{ __html: email.text }}
             />
-
           </div>
           <div
             className="column"
@@ -151,15 +153,15 @@ export default function Cesar() {
               borderRadius: "8px",
             }}
           >
-            <h2 style={{ fontSize: "24px", fontWeight: 600, marginBottom: "20px", color: "#000", textAlign: "left", marginLeft:"10%" }}>
-              Les 4 étapes clés pour optimiser l'efficacité de votre apprentissage.
+            <h2>
+              Les 4 étapes clés pour optimiser l'efficacité de votre
+              apprentissage.
             </h2>
 
             <Carousel />
-
           </div>
         </main>
-        </div>
-      </>
-    );
-  }
+      </div>
+    </>
+  );
+}

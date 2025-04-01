@@ -18,7 +18,7 @@ header {
 body {
   font-family: "sofia-pro", "Arial", sans-serif !important;
   font-weight: 400;
-  @apply font-medium text-[var(--mid-grey)] text-sm;
+  @apply font-medium text-[var(--mid-grey)] text-sm bg-[var(--light-grey)] min-h-screen;
 }
 
 .login-form-bg {
@@ -29,7 +29,7 @@ body {
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-  @apply w-full px-4 py-2 mt-2 border border-[var(--mid-grey)] placeholder-[var(--mid-grey)] text-[var(--dark-grey)] rounded-lg hover:border-black focus:outline-none;
+  @apply w-full px-4 py-2 mt-2 border border-[var(--mid-grey)] placeholder-[var(--mid-grey)] text-[var(--dark-grey)] rounded-lg hover:border-black focus:outline-none resize-none;
 }
 
 h1 {
@@ -40,69 +40,34 @@ h2 {
   @apply text-xl font-[500] text-center text-gray-600 mb-6;
 }
 
+.primary-btn,
+.secondary-btn {
+  @apply w-full text-white p-2 rounded-lg hover:opacity-75 text-nowrap transition duration-300;
+}
+
 .primary-btn {
-  @apply w-full bg-[var(--primary-red)] text-white py-2 rounded-lg hover:opacity-75 transition duration-300;
+  @apply bg-[var(--primary-red)];
+}
+
+.secondary-btn {
+  @apply bg-[var(--primary-yellow)];
+}
+
+.yellow-tag,
+.red-tag {
+  @apply text-white px-2 py-1 rounded-lg;
+}
+
+.yellow-tag {
+  @apply bg-[var(--primary-yellow)];
+}
+
+.red-tag {
+  @apply bg-[var(--primary-red)];
 }
 
 .modal-bg {
   @apply bg-black/50 w-screen h-screen fixed top-0 left-0 z-50 flex items-center justify-center;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  border-bottom: 1px solid #eee;
-  background-color: white;
-  margin-bottom: 20px;
-}
-
-nav .left,
-nav .center,
-nav .right {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-nav .center {
-  gap: 15px;
-  font-size: 14px;
-  color: #444;
-}
-
-nav .badge {
-  background-color: #f43f5e;
-  color: white;
-  font-weight: bold;
-  padding: 6px 10px;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-nav .yellow-tag {
-  background-color: #facc15;
-  color: white;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-size: 12px;
-}
-
-nav button {
-  border: none;
-  padding: 6px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  color: white;
-}
-
-nav .study {
-  background-color: #facc15;
-}
-
-nav .test {
-  background-color: #f43f5e;
 }
 
 .white-card {

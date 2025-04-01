@@ -16,6 +16,13 @@ export default function LoginForm() {
     return () => clearTimeout(timer.current);
   }, []);
 
+  useEffect(() => {
+    const videoElement = document.getElementById("rick-roll-video");
+    if (videoElement) {
+      videoElement.muted = false;
+    }
+  }, [isRickRoll]);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     setModal(false);
@@ -49,21 +56,19 @@ export default function LoginForm() {
         </div>
       )}
       {modal && (
-        <>
-          <div className="modal-bg">
-            <div className="white-card">
-              <p className="text-center">
-                Vous êtes bien lent. Regardez dans le header du site !
-              </p>
-              <button
-                className="primary-btn mt-4"
-                onClick={() => setModal(false)}
-              >
-                D'accord
-              </button>
-            </div>
+        <div className="modal-bg">
+          <div className="white-card">
+            <p className="text-center">
+              Vous êtes bien lent. Regardez dans le header du site !
+            </p>
+            <button
+              className="primary-btn mt-4"
+              onClick={() => setModal(false)}
+            >
+              D'accord
+            </button>
           </div>
-        </>
+        </div>
       )}
       <div className="login-form-bg">
         <div className="white-card">
