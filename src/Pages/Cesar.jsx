@@ -12,6 +12,7 @@ export default function Cesar() {
   const [answer, setAnswer] = useState("");
   const navigate = useNavigate();
   const timer = useRef(null);
+  const videoRef = useRef(null);
 
   const handleValidation = () => {
     if (answer.trim().toLowerCase() === "7Speaking Admin".toLowerCase()) {
@@ -39,9 +40,18 @@ export default function Cesar() {
   }, []);
 
   useEffect(() => {
-    const videoElement = document.getElementById("john-pork-video");
+    const videoElement = videoRef.current;
+
     if (videoElement) {
-      videoElement.muted = false;
+      if (isJohnPork) {
+        videoElement.muted = false;
+        videoElement.play().catch((err) => {
+          console.error("Erreur lors de la lecture vidéo:", err);
+        });
+      } else {
+        videoElement.pause();
+        videoElement.currentTime = 0;
+      }
     }
   }, [isJohnPork]);
 
@@ -107,13 +117,13 @@ export default function Cesar() {
         </div>
       )}
       <video
+        ref={videoRef}
         className={`object-cover absolute h-56 w-32 bottom-8 right-8 rounded-lg transition-all duration-1000 ease-in-out ${
           isJohnPork ? "translate-x-0" : "translate-x-[200%]"
         }`}
-        id="john-pork-video"
         src={JohnPork}
         type="video/mp4"
-        autoPlay
+        preload="auto"
         loop
         muted
       />
