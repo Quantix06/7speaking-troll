@@ -125,7 +125,6 @@ export default function LoginForm() {
             autoPlay
             loop
             muted
-            controls
           />
         </div>
       )}
@@ -133,7 +132,7 @@ export default function LoginForm() {
         <div className="modal-bg">
           <div className="white-card">
             <p className="text-center">
-              Vous êtes bien lent. Regardez dans le header du site !
+              Vous êtes bien lent. Regardez dans la console du site !
             </p>
             <button
               className="primary-btn mt-4"

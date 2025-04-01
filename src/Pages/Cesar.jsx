@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import email from "../Ressource/email.json";
 import Carousel from "../Components/Caroussel.jsx";
+import JohnPork from "../Ressource/JohnPork.mp4";
 
 export default function Cesar() {
   const [modal, setModal] = useState(false);
+  const [adviceModal, setAdviceModal] = useState(false);
   const [errorModal, setErrorModal] = useState(false);
+  const [isJohnPork, setIsJohnPork] = useState(false);
   const [answer, setAnswer] = useState("");
   const navigate = useNavigate();
+  const timer = useRef(null);
 
   const handleValidation = () => {
     if (answer.trim().toLowerCase() === "7Speaking Admin".toLowerCase()) {
@@ -23,6 +27,23 @@ export default function Cesar() {
     setModal(false);
     setAnswer("");
   };
+
+  useEffect(() => {
+    timer.current = setTimeout(() => {
+      setAdviceModal(true);
+    }, 200000);
+
+    console.log("Check le code césar !");
+
+    return () => clearTimeout(timer.current);
+  }, []);
+
+  useEffect(() => {
+    const videoElement = document.getElementById("john-pork-video");
+    if (videoElement) {
+      videoElement.muted = false;
+    }
+  }, [isJohnPork]);
 
   return (
     <>
@@ -57,6 +78,21 @@ export default function Cesar() {
           </div>
         </div>
       )}
+      {adviceModal && (
+        <div className="modal-bg">
+          <div className="white-card">
+            <p className="text-center">
+              Vous êtes bien lent. Ne serait-ce pas un code césar ?
+            </p>
+            <button
+              className="primary-btn mt-4"
+              onClick={() => setAdviceModal(false)}
+            >
+              D'accord
+            </button>
+          </div>
+        </div>
+      )}
       {errorModal && (
         <div className="modal-bg">
           <div className="white-card flex flex-col gap-4">
@@ -70,8 +106,19 @@ export default function Cesar() {
           </div>
         </div>
       )}
+      <video
+        className={`object-cover absolute h-56 w-32 bottom-8 right-8 rounded-lg transition-all duration-1000 ease-in-out ${
+          isJohnPork ? "translate-x-0" : "translate-x-[200%]"
+        }`}
+        id="john-pork-video"
+        src={JohnPork}
+        type="video/mp4"
+        autoPlay
+        loop
+        muted
+      />
       <div>
-        <nav className="bg-white shadow-md shadow-gray-300/50 flex p-2 justify-between">
+        <nav className="bg-white shadow-md shadow-gray-300/50 flex px-8 py-2 justify-between">
           <div className="flex gap-2 items-center">
             <div className="red-tag">7</div>
             <p>Code César</p>
@@ -83,42 +130,24 @@ export default function Cesar() {
           </div>
 
           <div className="flex gap-2 items-center">
-            <button className="secondary-btn">Processus d'étude</button>
+            <button
+              className="secondary-btn"
+              onClick={() => setIsJohnPork(true)}
+            >
+              Processus d'étude
+            </button>
             <button className="primary-btn" onClick={() => setModal(true)}>
               Réponse
             </button>
           </div>
         </nav>
 
-        <main
-          style={{
-            display: "flex",
-            width: "100%",
-            padding: "20px",
-            gap: "20px",
-          }}
-        >
-          <div
-            className="column"
-            style={{
-              width: "50%",
-              overflowY: "auto",
-              maxHeight: "calc(100vh - 110px)",
-              boxSizing: "border-box",
-              borderRadius: "8px",
-              backgroundColor: "white",
-            }}
-          >
+        <main className="p-8 flex gap-8">
+          <div className="column p-4 w-1/2 h-full bg-white rounded-lg border-none bg-none">
             <div
-              className="cesarVideo"
+              className="cesarVideo overflow-hidden rounded-lg relative w-full"
               style={{
-                position: "relative",
-                width: "100%",
-                paddingBottom: "56.25%", // 16:9 aspect ratio
-                height: 0,
-                overflow: "hidden",
-                borderTopLeftRadius: "8px",
-                borderTopRightRadius: "8px",
+                paddingBottom: "56.25%",
               }}
             >
               <iframe
@@ -133,7 +162,7 @@ export default function Cesar() {
                   border: 0,
                 }}
                 allowFullScreen
-              ></iframe>
+              />
             </div>
 
             <p
@@ -141,23 +170,7 @@ export default function Cesar() {
               dangerouslySetInnerHTML={{ __html: email.text }}
             />
           </div>
-          <div
-            className="column"
-            style={{
-              width: "50%",
-              height: "calc(100vh - 110px)",
-              boxSizing: "border-box",
-              borderRadius: "8px",
-              padding: "20px",
-              backgroundColor: "white",
-              borderRadius: "8px",
-            }}
-          >
-            <h2>
-              Les 4 étapes clés pour optimiser l'efficacité de votre
-              apprentissage.
-            </h2>
-
+          <div className="column p-4 w-1/2 h-full bg-white rounded-lg">
             <Carousel />
           </div>
         </main>
