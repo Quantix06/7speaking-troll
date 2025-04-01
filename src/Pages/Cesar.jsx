@@ -2,13 +2,23 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Logo from "../Ressource/7speaking_logo.png";
 import email from "../Ressource/email.json";
+import Carousel from "../Components/Caroussel.jsx";
 
 
 
 export default function Cesar() {
+
+    useEffect(() => {
+        document.body.style.overflow = "hidden";
+        return () => {
+          document.body.style.overflow = "auto"; // reset au démontage
+        };
+      }, [])
+
+
     return (
       <>
-        <div style={{ margin: 0, padding: 0, backgroundColor: "#F5F5F8" }}>
+        <div style={{ margin: 0, padding: 0, backgroundColor: "#F5F5F8", overflow: "hidden" }}>
         <nav
           style={{
             display: "flex",
@@ -83,17 +93,17 @@ export default function Cesar() {
           </div>
         </nav>
   
-        <main style={{ display: "flex", width: "100%", padding: "20px" }}>
+        <main style={{ display: "flex", width: "100%", padding: "20px", gap: "20px" }}>
         <div
             className="column"
             style={{
                 width: "50%",
-                height: "100%",
+                overflowY: "auto",
+                maxHeight: "calc(100vh - 110px)",
                 boxSizing: "border-box",
                 borderRadius: "8px",
                 backgroundColor: "white",
-                borderTopLeftRadius: "8px",
-                borderBottomLeftRadius: "8px",
+                
             }}
             >
             <div
@@ -105,7 +115,7 @@ export default function Cesar() {
                 height: 0,
                 overflow: "hidden",
                 borderTopLeftRadius: "8px",
-                borderBottomLeftRadius: "8px",
+                borderTopRightRadius: "8px",
                 }}
             >
                 <iframe
@@ -118,8 +128,6 @@ export default function Cesar() {
                     width: "100%",
                     height: "100%",
                     border: 0,
-                    borderTopLeftRadius: "8px",
-                    borderBottomLeftRadius: "8px",
                 }}
                 allowFullScreen
                 ></iframe>
@@ -135,13 +143,20 @@ export default function Cesar() {
             className="column"
             style={{
               width: "50%",
-              height: "100%",
+              height: "calc(100vh - 110px)",
               boxSizing: "border-box",
               borderRadius: "8px",
               padding: "20px",
+              backgroundColor: "white",
+              borderRadius: "8px",
             }}
           >
-            <p>Contenu de la colonne droite</p>
+            <h2 style={{ fontSize: "24px", fontWeight: 600, marginBottom: "20px", color: "#000", textAlign: "left", marginLeft:"10%" }}>
+              Les 4 étapes clés pour optimiser l'efficacité de votre apprentissage.
+            </h2>
+
+            <Carousel />
+
           </div>
         </main>
         </div>
