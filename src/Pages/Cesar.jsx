@@ -132,7 +132,7 @@ export default function Cesar() {
       />
 
       <div>
-        <nav className="bg-white shadow-md shadow-gray-300/50 flex px-8 py-2 justify-between">
+        <nav className="bg-white flex px-8 py-2 justify-between">
           <div className="flex gap-2 items-center">
             <div className="red-tag">7</div>
             <p>Code César</p>
