@@ -4,7 +4,7 @@
 
 **To:** You, Esteemed MI6 Operative
 
-**From:** Director "M"
+**From:** Director "M6"
 
 **Situation:** A shadow has fallen upon Projet Voltaire. Their administrator has been found murdered. This is not merely a tragedy; it's a potential breach of national security. Projet Voltaire holds sensitive information, and we must identify the perpetrator before further damage is done.
 
