@@ -20,50 +20,6 @@ Our initial intelligence suggests a link between the victim and 7Speaking, anoth
 
 **Intel Assistance:**
 
-*   For the first 5 minutes of each stage of your investigation, a cryptic hint will be provided. Pay close attention – it could be the key to unlocking the truth.
-*   Remember, a keen eye and sharp deductive reasoning are your greatest assets.
-
-**Important Directive:**
-
-Any use of automated website scanning tools will be considered a violation of protocol and will result in immediate mission failure. This investigation demands human intelligence, not brute force.
-
-**Failure is Not an Option.** The security of our nation depends on your success. Good luck, Agent.
-
-**Need Backup?** The solution, if absolutely necessary, can be found later in the "readme" file (but we trust you won't need it).
-
-This is a great start! Here are a few suggestions to further enhance the "readme" and immerse the user in the detective experience:
-
-**Enhancements for Immersion:**
-
-*   **Personalize the "M" Communication:** Instead of a generic "Director 'M'", consider adding a line or two that hints at a past working relationship with the player-detective. Something like: "Agent [Player's Assumed Name], your track record speaks for itself, which is why I'm assigning you to this sensitive case."
-*   **Elaborate on the Stakes:** Instead of just saying "potential breach of national security," give a *tiny* glimpse of what that might entail. "Projet Voltaire's databases contain encrypted linguistic analysis critical to understanding potential foreign influence campaigns." Or, "The victim was close to a breakthrough in identifying a network of deepfake propagandists." (Make it sound plausible but mysterious).
-*   **Sensory Details:** Sprinkle in a few details that appeal to the senses. For example, after "The clock is ticking," add: "The stale coffee in your MI6-issued mug has long gone cold, but you barely notice." Or, "The digital glow of the screen illuminates the grim set of your jaw."
-*   **Consequences of Failure:** Make the threat of failure more tangible. "If the killer isn't found quickly, the information could be leaked, undermining years of covert operations."
-*   **Hint Teasers (Without Giving Spoilers):** Instead of *just* saying there will be a hint, give a very vague idea of what form it might take. "The hint may be hidden in plain sight or disguised within seemingly innocuous code." Or, "The hint will appear as a subtle anomaly - trust your instincts."
-*   **A Final, Noir-ish Touch:** End the "readme" with a line that reinforces the detective atmosphere. "The truth is out there, Agent. Go find it." Or, "Justice demands answers. Let's get to work."
-
-**Revised Example incorporating the suggestions**
-
-**Subject: Urgent - Top Priority Investigation**
-
-**To:** You, Esteemed MI6 Operative
-
-**From:** Director "M"
-
-**Situation:** A shadow has fallen upon Projet Voltaire. Their administrator has been found murdered. This is not merely a tragedy; it's a potential breach of national security. Projet Voltaire holds sensitive information, and we must identify the perpetrator before further damage is done. The victim was close to a breakthrough in identifying a network of deepfake propagandists.
-
-**Your Mission, Should You Choose to Accept It:**
-
-Assume the identity of a seasoned MI6 detective. Agent [Player's Assumed Name], your track record speaks for itself, which is why I'm assigning you to this sensitive case. Your objective is to unmask the killer of the Projet Voltaire admin. The clock is ticking, the stale coffee in your MI6-issued mug has long gone cold, but you barely notice.
-
-**Phase 1: The 7Speaking Connection**
-
-Our initial intelligence suggests a link between the victim and 7Speaking, another organization. Your first task is to infiltrate 7Speaking's digital fortress and identify the individual responsible for their system administration. Obtain their password – it may hold a vital clue to the killer's identity or motives.
-
-**Time Constraint:** You have a strict 15-minute window to solve this case. Every second counts.
-
-**Intel Assistance:**
-
 *   For the first 5 minutes of each stage of your investigation, a cryptic hint will be provided. Pay close attention – it could be the key to unlocking the truth. The hint may be hidden in plain sight or disguised within seemingly innocuous code.
 *   Remember, a keen eye and sharp deductive reasoning are your greatest assets.
 
@@ -76,9 +32,6 @@ Any use of automated website scanning tools will be considered a violation of pr
 **Need Backup?** The solution, if absolutely necessary, can be found later in the "readme" file (but we trust you won't need it).
 
 The truth is out there, Agent. Go find it.
-
-By adding these small touches, you'll create a much more engaging and memorable experience for your website visitors.
-
 
 
 # Getting Started with Create React App
@@ -151,3 +104,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Instructions
+## Inspect the page: Go to the page inspection tool (DevTools) and check the header and body for an ID and a password.
+## Fill the forms: Enter the found credentials in the provided forms to proceed to the next question.
+## Caesar cipher text: On the Cesar page, you’ll find a text encoded with a Caesar cipher.
+## Decode the text: Copy the ciphertext and use an online tool to decode it into English.
+## Submit the answer: Enter the name of the email sender (found in the decoded text) into the form.
+## English quiz: After submission, you’ll face a short English quiz containing the killer’s thoughts.
+## Final question: Answer correctly to unlock the last page, where you must provide the killer’s motive.
+### 💡 Hint: The answer is hidden as white text on a white background (highlight to reveal).
